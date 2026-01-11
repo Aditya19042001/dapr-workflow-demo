@@ -52,7 +52,7 @@ def send_confirmation_activity(ctx: WorkflowActivityContext, combined_data: dict
 # Workflow Definition
 def order_processing_workflow(ctx: DaprWorkflowContext, order_input: dict) -> dict:
     """
-    Production Workflow:
+    Workflow:
     1. Runs process_order and check_inventory in PARALLEL
     2. Runs send_confirmation SEQUENTIALLY after both complete
     """
@@ -116,7 +116,7 @@ async def lifespan(app: FastAPI):
     workflow_runtime.register_activity(send_confirmation_activity)
     
     logger.info("🚀 Starting Dapr Workflow Runtime...")
-    # Start workflow runtime in background thread (it's a blocking call)
+    # Start workflow runtime in background thread
     loop = asyncio.get_event_loop()
     workflow_task = loop.run_in_executor(None, workflow_runtime.start)
     logger.info("✅ Workflow Runtime started successfully")
@@ -130,8 +130,8 @@ async def lifespan(app: FastAPI):
 
 # FastAPI App
 app = FastAPI(
-    title="Dapr Workflow Demo - Production",
-    description="Production-ready Dapr workflow with parallel and sequential activities",
+    title="Dapr Workflow Demo",
+    description="Dapr workflow with parallel and sequential activities",
     version="1.0.0",
     lifespan=lifespan
 )
@@ -139,7 +139,7 @@ app = FastAPI(
 @app.get("/")
 async def root():
     return {
-        "message": "Dapr Workflow Demo - Production Mode",
+        "message": "Dapr Workflow Demo",
         "workflow_engine": "Dapr SDK with Scheduler",
         "features": {
             "parallel_activities": 2,
