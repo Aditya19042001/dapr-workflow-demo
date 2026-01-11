@@ -1,0 +1,46 @@
+# ============================================
+# Core Dependencies
+# ============================================
+
+# FastAPI - Modern web framework
+fastapi==0.109.0
+
+# Uvicorn - ASGI server to run FastAPI
+uvicorn[standard]==0.27.0
+
+# Pydantic - Data validation
+# ============================================
+# Dapr Dependencies
+# ============================================
+
+# Dapr Python SDK
+dapr==1.14.0
+
+# Dapr Workflow extension (use latest stable version)
+dapr-ext-workflow
+
+# ============================================
+# Optional but Recommended
+# ============================================
+
+# HTTP client for making requests
+httpx==0.26.0
+
+# Python dotenv for environment variables
+python-dotenv==1.0.0
+
+# ============================================
+# Installation Instructions
+# ============================================
+# 
+# 1. Create a virtual environment:
+#    python -m venv venv
+#
+# 2. Activate it:
+#    - Windows: venv\Scripts\activate
+#    - Mac/Linux: source venv/bin/activate
+#
+# 3. Install dependencies:
+#    pip install -r requirements.txt
+#
+# ============================================

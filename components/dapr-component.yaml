@@ -1,0 +1,57 @@
+# ============================================
+# Dapr State Store Component
+# ============================================
+# This configures where Dapr stores workflow state
+# For this demo, we use Redis (included with Dapr)
+
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: statestore
+spec:
+  type: state.redis
+  version: v1
+  metadata:
+  - name: redisHost
+    value: localhost:6379
+  - name: redisPassword
+    value: ""
+  - name: actorStateStore
+    value: "true"
+
+---
+
+# ============================================
+# Dapr Pub/Sub Component (Optional)
+# ============================================
+# Used for event-driven communication between services
+
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: pubsub
+spec:
+  type: pubsub.redis
+  version: v1
+  metadata:
+  - name: redisHost
+    value: localhost:6379
+  - name: redisPassword
+    value: ""
+
+---
+
+# ============================================
+# What is this file?
+# ============================================
+# 
+# Dapr uses "components" to abstract away infrastructure.
+# Instead of coding directly against Redis, Kafka, etc.,
+# you configure components and Dapr handles the details.
+#
+# Benefits:
+# - Switch from Redis to PostgreSQL without code changes
+# - Dapr handles retries, failover, and connections
+# - Your app stays infrastructure-agnostic
+#
+# ============================================
