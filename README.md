@@ -57,7 +57,7 @@ dapr-workflow-demo/
 │   └── main.py                  # FastAPI app + Dapr workflow logic
 │
 ├── components/
-│   └── dapr-component.yaml            # Dapr Workflow engine component
+│   └── dapr-component.yaml      # Dapr Workflow engine component
 │                  
 ├── requirements.txt             # Python dependencies
 ├── README.md                    # Setup, run, trigger workflow
