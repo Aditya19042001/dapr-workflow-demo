@@ -198,6 +198,16 @@ curl http://localhost:8000/workflow/status/order_ORDER001
 }
 ```
 
+## Demo Scope & Design Choices
+
+This project is intentionally designed as a **learning and reference demo**, not a production system.
+
+- Activities use simulated delays (`time.sleep`) to mimic external service latency.
+- Workflow state is **fully managed by Dapr** via the configured state store (Redis).
+- No manual persistence or orchestration logic is implemented in application code.
+- The focus is on understanding **parallel vs sequential workflow execution**, durability,  and lifecycle management.
+
+
 ## Advanced Operations
 
 ### Pause a Workflow
