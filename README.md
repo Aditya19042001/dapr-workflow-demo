@@ -331,13 +331,6 @@ Once your application is running, visit:
 
 You can test all endpoints interactively through the Swagger UI.
 
-## Production Deployment
-
-For production deployment with Docker and Kubernetes, see:
-- **Docker Compose**: `docker-compose.yml` (in artifacts)
-- **Kubernetes**: `deployment.yaml` (in artifacts)
-- **Full Guide**: `PRODUCTION_SETUP.md` (in artifacts)
-
 ## Features
 
 ✅ **Parallel Execution**: Activities 1 & 2 run simultaneously  
